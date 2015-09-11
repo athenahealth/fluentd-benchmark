@@ -108,3 +108,9 @@ yum install -y libyaml gcc && bundle install
 bundle exec fluentd -c agent.conf &
 bundle exec fluentd -c receiver.conf &
 ```
+
+as is the performance with memory buffer on Dell R610 oscilates in the range:
+```
+2015-09-11 20:26:49 +0000 [info]: plugin:out_flowcounter_simplecount:10183 indicator:num unit:second
+2015-09-11 20:28:33 +0000 [info]: plugin:out_flowcounter_simplecountt:28384 indicator:num unit:second
+```
