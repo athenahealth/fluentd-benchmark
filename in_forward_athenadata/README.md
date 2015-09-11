@@ -94,3 +94,17 @@ Result
 | 150000                      | N/A                     |         |             |          |             |                       |
 | 200000                      | N/A                     |         |             |          |             |                       |
 
+```
+docker run -it quay.io/athenahealth/fluentd:0.12.14.ath2 /bin/bash
+yum install -y wget git
+git clone https://github.com/athenahealth/fluentd-benchmark.git
+cd fluentd-benchmark/one_forward_athenadata/
+wget
+"http://hdpdn703.hio.athenahealth.com:50075/webhdfs/v1/log/common_apache/access/20150907/hdpnn711.hio.athenahealth.com_15.log.gz?op=OPEN&namenoderpcaddress=hdphio&offset=0"
+-O /var/tmp/test.json.gz
+gunzip /var/tmp/test.json.gz
+cd ../in_forward_athenadata/
+yum install -y libyaml gcc && bundle install
+bundle exec fluentd -c agent.conf &
+bundle exec fluentd -c receiver.conf &
+```
